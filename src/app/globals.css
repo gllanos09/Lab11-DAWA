@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ---------------------------------------------------------------------------
+   TAREA — Cambio de tema del proyecto.
+   shadcn/ui se inicializó con el color base "neutral" (toda la escala en gris).
+   Aquí se sustituyen los tokens por una paleta violeta: como los componentes
+   leen siempre de las variables (--primary, --ring, --accent, ...), basta con
+   redefinirlas una vez para que todo el Dashboard cambie de color.
+--------------------------------------------------------------------------- */
+
+:root {
+  --background: oklch(0.995 0.002 293);
+  --foreground: oklch(0.205 0.02 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.02 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.02 285);
+  --primary: oklch(0.541 0.281 293.009);
+  --primary-foreground: oklch(0.985 0.004 293);
+  --secondary: oklch(0.962 0.018 293.5);
+  --secondary-foreground: oklch(0.38 0.189 293.745);
+  --muted: oklch(0.968 0.007 286);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.943 0.029 294.588);
+  --accent-foreground: oklch(0.38 0.189 293.745);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.916 0.012 290);
+  --input: oklch(0.916 0.012 290);
+  --ring: oklch(0.541 0.281 293.009);
+  --chart-1: oklch(0.541 0.281 293.009);
+  --chart-2: oklch(0.606 0.25 292.717);
+  --chart-3: oklch(0.702 0.183 293.541);
+  --chart-4: oklch(0.811 0.111 293.571);
+  --chart-5: oklch(0.894 0.057 293.283);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0.008 293);
+  --sidebar-foreground: oklch(0.205 0.02 285);
+  --sidebar-primary: oklch(0.541 0.281 293.009);
+  --sidebar-primary-foreground: oklch(0.985 0.004 293);
+  --sidebar-accent: oklch(0.943 0.029 294.588);
+  --sidebar-accent-foreground: oklch(0.38 0.189 293.745);
+  --sidebar-border: oklch(0.916 0.012 290);
+  --sidebar-ring: oklch(0.541 0.281 293.009);
+}
+
+.dark {
+  --background: oklch(0.165 0.018 286);
+  --foreground: oklch(0.985 0.004 293);
+  --card: oklch(0.215 0.022 286);
+  --card-foreground: oklch(0.985 0.004 293);
+  --popover: oklch(0.215 0.022 286);
+  --popover-foreground: oklch(0.985 0.004 293);
+  --primary: oklch(0.702 0.183 293.541);
+  --primary-foreground: oklch(0.225 0.098 293.6);
+  --secondary: oklch(0.288 0.032 288);
+  --secondary-foreground: oklch(0.985 0.004 293);
+  --muted: oklch(0.288 0.032 288);
+  --muted-foreground: oklch(0.712 0.018 286);
+  --accent: oklch(0.32 0.055 291);
+  --accent-foreground: oklch(0.943 0.029 294.588);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.606 0.25 292.717);
+  --chart-1: oklch(0.702 0.183 293.541);
+  --chart-2: oklch(0.606 0.25 292.717);
+  --chart-3: oklch(0.541 0.281 293.009);
+  --chart-4: oklch(0.811 0.111 293.571);
+  --chart-5: oklch(0.894 0.057 293.283);
+  --sidebar: oklch(0.215 0.022 286);
+  --sidebar-foreground: oklch(0.985 0.004 293);
+  --sidebar-primary: oklch(0.702 0.183 293.541);
+  --sidebar-primary-foreground: oklch(0.225 0.098 293.6);
+  --sidebar-accent: oklch(0.32 0.055 291);
+  --sidebar-accent-foreground: oklch(0.943 0.029 294.588);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.606 0.25 292.717);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
