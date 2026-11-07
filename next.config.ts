@@ -8,6 +8,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  // Evita que `next dev` genere y reescriba el archivo AGENTS.md.
+  agentRules: false,
 };
 
 export default nextConfig;
